@@ -23,6 +23,13 @@ function sortByHeight(a) {
   sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]);
 
   function sortByHeight(a) {
+    let filtered = a.filter(val => val !== -1)
+    let sorted = filtered.sort((a, b) => a-b)
+    return a.map(val => val === -1? -1: sorted.shift())
+}
+
+
+  function sortByHeight(a) {
     var s = a.filter(h => h > 0).sort((a, b) => a - b)
     return a.map(p => {
         if (p !== -1) {
