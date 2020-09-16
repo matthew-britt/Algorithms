@@ -10,6 +10,17 @@ areSimilar(a, b) = true.
 The arrays are equal, no need to swap any elements.
 
 function areSimilar(a,b) {
-
+    if (a.toString() === b.toString()) return true;
+    let a1 = [];
+    let b1 = [];
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        a1.push(a[i]);
+        b1.push(b[i]);
+      }
+    }
+    b1 = b1.reverse();
+    if (b1.length === 2 && a1.toString() === b1.toString())   return true;
+    return false;
 }
 areSimilar([1,2,3],[2,1,3])
