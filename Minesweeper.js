@@ -44,12 +44,33 @@ minesweeper(matrix) = [[1, 2, 1],
                                 mineArray[i][j]++;
                               }
                             }
-                      
-                      
-                        console.log(mineArray)
+                            //below right
+                            if (matrix[i + 1] !== undefined) {
+                              if (matrix[i + 1][j + 1] === true) {
+                                mineArray[i][j]++;
+                              }
+                            }
+                            //below left 
+                            if (matrix[i + 1] !== undefined) {
+                              if (matrix[i + 1][j - 1] === true) {
+                                mineArray[i][j]++;
+                              }
+                            }
+                            //above right
+                            if (matrix[i - 1] !== undefined) {
+                              if (matrix[i - 1][j + 1] === true) {
+                                mineArray[i][j]++;
+                              }
+                            }
+                            //above left 
+                            if (matrix[i - 1] !== undefined) {
+                              if (matrix[i - 1][j - 1] === true) {
+                                mineArray[i][j]++;
+                              }
+                            }
                           }
                         }
-                      }
-                      minesweeper([[true, false, false],
-                                [false, true, false],
-                                [false, false, false]])
+                        return mineArray;
+                      };
+                      
+                      
